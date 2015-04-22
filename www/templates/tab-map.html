@@ -1,0 +1,9 @@
+<ion-view cache-view="false" 	view-title="GatherUp" hide-back-button="true">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-location" ng-click="getCurrent()"></button>
+  </ion-nav-buttons>
+
+  <ion-content data-tap-disabled="true">
+   <leaflet  center="map.center" markers="map.markers" defaults="map.defaults" id="map"></leaflet>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+<ion-view view-title="Account" hide-back-button="true">
+	<ion-nav-buttons side="right">
+	  <button class="button" ng-hide="showLogin" ng-click="logout()">Log out</button>
+	</ion-nav-buttons>
+
+  <ion-content class="padding">
+   
+   <div class="list card padding" ng-show="showLogin">
+   	<div><p class="text-danger text-center"> {{errorMessage}}</p></div>
+
+  	<form name="loginForm" ng-submit="login(em,pwd)" novalidate>
+	    <label class="item item-input">
+	        <span class="input-label">Email</span>
+	        <input type="email" name="email" ng-model="em" required/>
+	    </label>
+	    <label class="item item-input">
+	        <span class="input-label">Password</span>
+	        <input type="password" ng-model="pwd" name="password" required/>
+	    </label>
+	    <button class="button button-block button-positive" ng-disabled="loginForm.$invalid">Log in </button>
+    </form>
+   </div>
+
+   <div class="list text-center" ng-show="showLogin">
+        <a href="#/tab/signup"><button class="button button-outline icon-left ion-person-add button-positive">
+            Create an account</button></a>
+    </div>
+
+    <div ng-hide="showLogin">
+    	<div class="list" >
+	    	<div ng-repeat="event in events">
+		        <a class="item item-avatar" href="#/tab/account/{{event.$id}}">
+		            <i class="icon ion-paper-airplane"></i>
+		            <h2>{{event.name}}</h2>
+		            <p>{{event.dateString}} | {{event.timeString}}</p>
+		        </a>
+		    </div>
+      	</div>
+    </div>
+
+
+
+
+
+
+</ion-content>
+
+</ion-view>

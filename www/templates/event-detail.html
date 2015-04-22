@@ -1,0 +1,52 @@
+<ion-view view-title="Event detail">
+  <ion-content class="padding">
+  	<ion-refresher on-refresh="doRefresh()"></ion-refresher>
+  	<div>
+		<div class="list">
+		  <div class="item item-avatar">
+		    <i class="icon ion-paper-airplane"></i>
+		    <h2>{{event.name}}</h2>
+		    <p>{{event.dateString}} | {{event.timeString}}</p>
+		  </div>
+
+		  <div class="item item-text-wrap">
+		    <p>{{event.description}}</p>
+		  </div>
+
+		   <div class="item item-divider">
+		  	 <p>{{event.address}}</p>
+		  </div>	  
+		</div>
+
+		
+		<div class="item item-divider">
+		    <div><p class="text-center">{{event.num_comment}} comments</p></div>
+		</div>
+
+		<div class="list">
+			  <div class="item" ng-repeat="comment in event.comments"><p>{{comment}}</p></div>
+		</div>
+
+	 </div>
+
+	 <div ng-hide="showForm">
+	 	<button class="button button-full button-clear button-assertive" disabled>Please log in to comment</button>
+	 </div>
+	 
+	<div class="bottom"> </div>
+  </ion-content>
+
+  <div class="float-button" ng-show="showForm">
+	  <span class="height-fix">
+	    <a ng-click="openModal()" class="content">
+	      <i class="ion-plus-circled positive"> </i>
+	    </a>
+	  </span>
+	</div>
+
+</ion-view>
+
+
+
+
+

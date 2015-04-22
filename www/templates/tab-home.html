@@ -1,0 +1,17 @@
+<ion-view view-title="GatherUp">
+  <ion-content class= "padding">
+  <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+      <div class="list">
+        <button ng-show= '!events' class="button button-full button-clear button-positive">No events nearby <i class="ion-sad-outline"></i></button>
+
+        <div ng-repeat="(key,event) in events">
+
+          <a class="item item-avatar" href="#/tab/home/{{key}}">
+            <i class="icon ion-paper-airplane"></i>
+            <h2>{{event.name}}</h2>
+            <p>{{event.dateString}} | {{event.timeString}}</p>
+          </a>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

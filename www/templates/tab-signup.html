@@ -1,0 +1,42 @@
+<ion-view view-title="Create an account" hide-back-button="true">
+  <ion-content>
+	
+	<div class="list card padding">
+	   	<div><p class="text-danger text-center">{{errorMessage}}</p></div>
+
+		<form name="signupForm" ng-submit="signup(em,pwd)" novalidate>
+			<label class="item item-input">
+			    <span class="input-label">Email</span>
+			    <input type="email" name="email" ng-model="em" required/>
+			</label>
+
+			 <div class="form-errors" ng-show="signupForm.email.$error"
+                ng-messages="signupForm.email.$error"
+                ng-messages-include="templates/errors.html">
+          	</div>
+
+			<label class="item item-input">
+			    <span class="input-label">Password</span>
+			    <input type="password" ng-model="pwd" name="password" ng-minlength="6" ng-maxlength="10"  required/>
+			</label>
+
+			 <div class="form-errors" ng-show="signupForm.password.$error"
+                ng-messages="signupForm.password.$error"
+                ng-messages-include="templates/errors.html">
+          	</div>
+
+			<button class="button button-block button-positive" ng-disabled="signupForm.$invalid">Sign up </button>
+		</form>
+	</div>
+
+
+	 <div class="list text-center">
+        <a href="#/tab/account"><button class="button button-outline icon-left ion-home	 button-positive">
+             Log in
+        </button></a>
+    </div>
+
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,84 @@
+/* Empty. Add your own CSS if you like */
+body, .ionic-body {
+font-family: "SayWeb", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+font-family: "SayWeb", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.tab-item {
+font-family: "SayWeb", "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+input, button, select, textarea {
+font-family: "SayWeb", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.roboto {
+font-family: "SayWeb", "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.roboto input {
+font-family: "SayWeb", "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.text-danger { color: red;}
+
+
+#map {
+  width: 100%;
+  height: 100%;
+
+}
+
+.scroll {
+  height: 100%;
+}
+
+.item-avatar i:first-child, .item-avatar .item-img {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 36px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 4px; 
+}
+
+.float-button {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 30px;
+  padding: 30px;
+  font-size: 40px;
+  background: $warning;
+  position: fixed;
+  bottom: 20px; /* Adjust to where you want it */
+  right: 20px; /* Adjust to where you want it */
+  z-index: 9999;
+}
+
+.float-button .height_fix {
+  margin-top: 100%;
+}
+
+.float-button .content {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-top: -20px; /* Note, this must be half the font size */
+  color: $light;
+}
+ 
+.bottom {
+  padding-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}

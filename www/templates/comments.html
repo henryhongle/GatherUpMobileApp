@@ -1,0 +1,61 @@
+  <div class="modal">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">Add a comment</h1>
+       <button class="button" ng-click="closeModal()">Close</button>
+    </ion-header-bar>
+
+
+    <ion-content class="padding">
+
+  		 <form name="commentForm" ng-submit="addComment()" novalidate>
+			<label class="item item-input">
+			    <input type="text" name="comment" ng-model="comment.body" required/>
+			</label>
+
+			 <div class="form-errors" ng-show="commentForm.comment.$error"
+                ng-messages="commentForm.comment.$error"
+                ng-messages-include="templates/errors.html">
+          	</div>
+
+			<button class="button button-block button-positive" ng-disabled="commentForm.$invalid">Add comment </button>
+		</form>
+    </ion-content>
+  </div>
+
+
+
+
+
+
+
+
+
+<!--<ion-view view-title="Adding comment" hide-back-button="true">
+	<ion-nav-buttons side="right">
+	  <a href="#/home/{{eventID}}"><button class="button">Cancel</button></a>
+	</ion-nav-buttons>
+  <ion-content class="padding">
+	
+	<div class="list card">
+	  
+		<form name="commentForm" ng-submit=" " novalidate>
+			<label class="item item-input">
+			    <input type="text" name="comment" ng-model="comment" required/>
+			</label>
+
+			 <div class="form-errors" ng-show="commentForm.comment.$error"
+                ng-messages="commentForm.email.$error"
+                ng-messages-include="templates/errors.html">
+          	</div>
+
+			<button class="button button-block button-positive" ng-disabled="commentForm.$invalid">Add comment </button>
+		</form>
+	</div>
+
+
+
+
+	</ion-content>
+</ion-view>
+
+-->

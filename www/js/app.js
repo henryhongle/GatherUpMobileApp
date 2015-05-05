@@ -89,6 +89,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
     }
   })
 
+  .state('tab.mevent-detail', {
+    url: '/map/:eventId',
+    views: {
+      'tab-map': {
+        templateUrl: 'templates/event-detail.html',
+        controller: 'EventDetailCtrl'
+      }
+    }
+  })
+
   .state('tab.event-detail', {
     url: '/home/:eventId',
     views: {

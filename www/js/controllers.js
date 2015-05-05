@@ -22,13 +22,18 @@ angular.module('starter.controllers', [])
 	}
 })
 
-.controller('EventDetailCtrl', function($scope, Event,$state, $stateParams, Auth, $ionicModal) {
+.controller('EventDetailCtrl', function($scope, Event,$state, $stateParams, Auth, $ionicModal, $window) {
 	$scope.event = Event.get($stateParams.eventId);
 	$scope.showForm = false;
 	$scope.comment = {body: ""};
 	$scope.user = Auth.isAuth();
 	if ($scope.user) {
 		$scope.showForm = true;
+	}
+
+
+	$scope.openMap = function() {
+		$window.open("http://maps.google.com/?q=" + $scope.event.address, "_system");
 	}
 
 	$scope.doRefresh = function() {
@@ -40,6 +45,8 @@ angular.module('starter.controllers', [])
 		}
 		$scope.$broadcast('scroll.refreshComplete');
 	}
+
+	//$window.open("http://maps.google.com/?q=" + address, "_system");
 
 	$scope.addComment = function() {	
 		//console.log(comment);
@@ -112,7 +119,9 @@ angular.module('starter.controllers', [])
 				//var val = id.substring(1);
 				//markers.push({lat:events[id].lat, lng: events[id].lng, message: events[id].name});
 				var val = "m" + i.toString();
-				markers[val] = {lat:events[id].lat, lng: events[id].lng, message: events[id].name};
+				var link = "<a href='#/tab/map/"+ id + "'>" + events[id].name + "</a>";
+
+				markers[val] = {lat:events[id].lat, lng: events[id].lng, message: link};
 				i++;
     		}
 		} 

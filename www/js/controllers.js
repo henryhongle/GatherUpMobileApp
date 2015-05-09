@@ -162,6 +162,20 @@ angular.module('starter.controllers', [])
 		});
 	}
 
+
+	$scope.doRefresh = function() {
+		if ($scope.user) {
+			$scope.showLogin = false;
+
+			Event.getUserEvents($scope.user.uid).then(function (data) {
+				$scope.events = data;
+				//$scope.$apply();
+				$scope.$broadcast('scroll.refreshComplete');
+			});
+		}
+		
+	}
+
 	$scope.login = function(em,pwd) {
 		Auth.ref().authWithPassword({
   			email: em,

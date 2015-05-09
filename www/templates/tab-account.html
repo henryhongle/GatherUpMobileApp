@@ -4,6 +4,7 @@
 	</ion-nav-buttons>
 
   <ion-content class="padding">
+  <ion-refresher on-refresh="doRefresh()"></ion-refresher>
    
    <div class="list card padding" ng-show="showLogin">
    	<div><p class="text-danger text-center"> {{errorMessage}}</p></div>

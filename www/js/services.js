@@ -80,7 +80,6 @@ angular.module('starter.services', [])
       //$scope.event.date = $scope.event.date.toJSON();
 
       geoQuery.on("key_entered", function(eventId, eventLocation) {
-      
         ref.child("events").child(eventId).once("value", function(dataSnapshot) {
           var event = dataSnapshot.val();
           if (event !== null) {
@@ -89,7 +88,10 @@ angular.module('starter.services', [])
               nearEvents[eventId] = event;
               defer.resolve(nearEvents);
             }
-           
+            else {
+              delete nearEvents[eventId];
+              defer.resolve(nearEvents);
+            }
           }
         });
       });
